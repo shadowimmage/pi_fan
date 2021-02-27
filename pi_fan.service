@@ -1,0 +1,13 @@
+[Unit]
+Description=PWM Fan Control
+After=network.services
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 /home/pi/pi_fan/fan_ctrl.py
+Restart=always
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
